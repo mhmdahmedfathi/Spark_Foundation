@@ -51,8 +51,9 @@ app.post('/Transfer', (req, res, next) => {
                 db.collection('Transfers').updateOne(myquery, newvalues, function(err, res) {
                     if (err) throw err;
             });
-            res.redirect("/")
             }
+            res.redirect("/")
+            
      }).catch((err) => {
             console.log(err);
         });

@@ -7,7 +7,6 @@ function getdiv(e) {
         var active = document.getElementById(e.target.id);
         var div = document.getElementById(e.target.getAttribute("data-nav"));
         var x = window.matchMedia("(max-width: 700px)")
-        console.log(x)
         if(!x.matches){
             if (e.target.getAttribute("data-nav") != "About")
             div.setAttribute("style", "display:block");
@@ -20,9 +19,11 @@ function getdiv(e) {
     }
 }
 
-function Transfer(){
+function Transfer(e){
     document.getElementById("Transfer").setAttribute("style","display:block;text-align:-moz-center;")
     document.getElementById("View").setAttribute("style","display:none")
+    console.log(e.target.getAttribute('data-nav'))
+    document.getElementById("Transfer").setAttribute("data-nav",e.target.getAttribute('data-nav'))
     document.getElementsByClassName('navbar')[0].removeEventListener('click',getdiv)    
 }
 function Close(){
@@ -38,3 +39,6 @@ let hide = document.querySelector("#about");
 document.getElementById(hide.getAttribute("data-nav")).setAttribute("style", "display:none");
 
 document.getElementsByClassName('navbar')[0].addEventListener("click", getdiv)
+for(Btn of document.getElementsByClassName('TransferBtn')){
+    Btn.addEventListener('click',Transfer)
+}
