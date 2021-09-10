@@ -16,7 +16,7 @@ app.get('/', (req, res, next) => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
 
         if (err) throw err;
-        const db = client.db("Spark_Foundation");
+        const db = client.db("SparkFoundation");
         db.collection('Transfers').find({}).toArray().then((Transfers) => {
             res.render(path.join(__dirname, 'public', 'Transfer.ejs'), { Transfers: Transfers });
         }).catch((err) => {
@@ -30,7 +30,7 @@ app.post('/Add', (req, res, next) => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
 
         if (err) throw err;
-        const db = client.db("Spark_Foundation");
+        const db = client.db("SparkFoundation");
         db.collection('Transfers').insertOne({ User: req.body.User, Email: req.body.Email, Amount: req.body.Amount }).then(
             res.redirect("/")
         ).catch((err) => {
@@ -43,7 +43,7 @@ app.post('/Transfer', (req, res, next) => {
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
 
         if (err) throw err;
-        const db = client.db("Spark_Foundation");
+        const db = client.db("SparkFoundation");
         db.collection('Transfers').find({}).toArray().then((Transfers) => {
             if(Transfers[0].User === req.body.User){
                 var myquery = { User: req.body.User };

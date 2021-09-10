@@ -7,17 +7,16 @@
     "test": "echo \"Error: no test specified\" && exit 1",
     "start-dev": "nodemon index.js",
     "start": "node index.js"
-    
   },
   "author": "Mohamed ahmed",
   "license": "ISC",
   "dependencies": {
     "body-parser": "^1.19.0",
+    "ejs": "^0.8.5",
     "express": "^4.17.1",
     "http": "0.0.1-security",
     "mongodb": "^4.1.1",
     "nodemon": "^2.0.12",
-    "path": "^0.12.7",
-    "ejs": "0.8.5"
+    "path": "^0.12.7"
   }
 }
