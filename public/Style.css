@@ -1,0 +1,130 @@
+
+#About,#Add,#View,#Transfer {
+    display:none;
+}
+
+.callout {
+    max-width: 300px;
+  }
+  
+  .callout-header {
+    padding: 25px 15px;
+    background: rgb(135, 150, 155);
+    font-size: 30px;
+    color: white;
+    display:grid;
+    grid-template-columns:90% 10%;
+  }
+  
+  .callout-container {
+    padding: 15px;
+    background-color: white;
+    text-align:left;
+    color: black
+  }
+  
+  .closebtn {
+    position: relative;
+    top: -50%;
+    color: white;
+    font-size: 30px;
+    cursor: pointer;
+  }
+  
+  .closebtn:hover {
+    color: lightgrey;
+  }
+a{
+    color:black;
+    text-decoration:none;
+    font-size:20px;
+}
+a:hover,a:active{
+    color:black;
+}
+.container1{
+    background-image: url("./img.svg");
+    background-repeat: no-repeat;
+    background-size: cover;
+}
+.content{
+    display: grid;
+ justify-content:center;
+ border: solid 0.1fr blue;
+ background-color: transparent;
+ width:25%;
+ margin:auto;
+padding: 45px 5px 5px 5px ;
+}
+.navbar{
+    display: flex; 
+    gap: 5%;
+    align-content: center;
+    justify-content:end;
+    margin-bottom:0px;
+    background-color: transparent;
+}
+label{
+    width: 70px;
+}
+.textbox{
+    border-radius: 10px;
+    
+}
+#Home,#About{
+ font-size:25px;
+background-color: transparent;
+text-align: center;
+width: 100%;
+line-height:200%
+}
+
+p{
+    text-align: left;
+    width:350px;
+    font-size: larger;
+}
+.button{
+    width:100%;
+    text-align: center;
+    padding:5px 5px 5px 5px;
+    background-color: #697581;
+    border-style:none;
+    border-radius: 30px;
+    color: white;
+}
+table {
+    font-family: arial, sans-serif;
+    border-collapse: collapse;
+    width: 100%;
+  }
+  
+  td, th {
+    border: 1px solid #dddddd;
+    text-align: left;
+    padding: 8px;
+  }
+  
+  tr:nth-child(even) {
+    background-color: #dddddd;
+  }
+@media only screen and (max-width: 600px) {
+    
+    a{
+        color: black;
+    }
+    .container1{
+        
+        background-image: url("./imgMob.png");
+        background-size: cover;
+        min-height: 100%;
+    }
+    
+    
+#Home,#About{
+    font-size:30px;
+   background-color: transparent;
+   text-align: initial;
+   line-height:200%
+   }
+}
