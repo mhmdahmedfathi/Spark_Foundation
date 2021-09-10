@@ -7,9 +7,12 @@ app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(express.static(path.join(__dirname, 'public')));
 app.set('view engine', 'ejs');
+
+const PORT = process.env.PORT || 8080;
+const url = process.env.URL || "mongodb://localhost:27017";
+
 app.get('/', (req, res, next) => {
     const MongoClient = mongo.MongoClient;
-    const url = 'mongodb://localhost:27017';
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
 
         if (err) throw err;
@@ -24,7 +27,6 @@ app.get('/', (req, res, next) => {
 });
 app.post('/Add', (req, res, next) => {
     const MongoClient = mongo.MongoClient;
-    const url = 'mongodb://localhost:27017';
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
 
         if (err) throw err;
@@ -38,7 +40,6 @@ app.post('/Add', (req, res, next) => {
 });
 app.post('/Transfer', (req, res, next) => {
     const MongoClient = mongo.MongoClient;
-    const url = 'mongodb://localhost:27017';
     MongoClient.connect(url, { useNewUrlParser: true, useUnifiedTopology: true }, (err, client) => {
 
         if (err) throw err;
@@ -60,4 +61,4 @@ app.post('/Transfer', (req, res, next) => {
 });
 
 const server = http.createServer(app);
-server.listen(3000);
+server.listen(PORT);
