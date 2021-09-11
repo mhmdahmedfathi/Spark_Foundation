@@ -19,6 +19,31 @@ function getdiv(e) {
     }
 }
 
+const postdata =async(url='',data={})=>{
+
+    const response= await fetch(url,{
+        method:"POST",
+        credentials:"same-origin",
+        headers:{
+            'content-type':"application/json",
+        },
+        body:JSON.stringify(data)
+    })
+}
+
+function Submit(){
+    let User = document.getElementById("User").value;
+    let Amount = document.getElementById("Amount").value;
+    let From = document.getElementById("Transfer").getAttribute("data-nav"); 
+    const data={
+        User:User,
+        Amount:Amount,
+        From:From
+    }
+    postdata("/Transfer",data);
+
+}
+
 function Transfer(e){
     document.getElementById("Transfer").setAttribute("style","display:block;text-align:-moz-center;")
     document.getElementById("View").setAttribute("style","display:none")

@@ -88,11 +88,10 @@
     </div>
     <div id="Transfer" data-nav="Transfer">
         <div class="callout">
-            <form action="/Transfer" method="POST">
                 <div class="callout-header">Transfer <span class="closebtn" onclick="Close()">×</span></div>
                 <div class="callout-container">
-                    <label for="cars">Name:</label>
-                    <select name="User" id="cars">
+                    <label for="name">Name:</label>
+                    <select name="User" id="User">
                         <% Transfers.forEach(element=> { %>
                             <option value="<%=element.User%>">
                                 <%=element.User%>
@@ -101,11 +100,10 @@
                             <%})%>
                     </select>
                     <br><br>
-                    <label for="Amount">Value:</label><input class="textbox" type="text" name="Amount"
+                    <label for="Amount">Value:</label><input class="textbox" id="Amount" type="text" name="Amount"
                         value="<%= data.User %>" required /><br><br>
-                    <input type="submit" value="Submit">
+                    <button onclick="Submit()" type="submit">Submit</button>
                 </div>
-            </form>
         </div>
     </div>
 
