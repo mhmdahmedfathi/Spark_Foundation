@@ -61,12 +61,11 @@ app.post('/Transfer', (req, res, next) => {
                 }
 
             })
-        }).then(
-            res.redirect("/")
-        ).catch((err) => {
+        }).catch((err) => {
             console.log(err);
         });
     });
+    res.redirect("/")
 });
 
 const server = http.createServer(app);
